@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
     gtk_init(&argc, &argv);
     terminal = vte_terminal_new();
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-    gtk_window_set_title(GTK_WINDOW(window), "customterm");
+    gtk_window_set_title(GTK_WINDOW(window), "jankterm");
 
     /* Start a new shell */
     gchar **envp = g_get_environ();

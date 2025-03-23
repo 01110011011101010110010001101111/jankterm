@@ -1,0 +1,21 @@
+#!/bin/bash
+
+APP_NAME="JankTerm"
+EXEC_PATH="$(pwd)/term"
+ICON_PATH="$(pwd)/icon2.png"
+DESKTOP_FILE="/usr/share/applications/term.desktop"
+VERSION=1.0
+
+echo "[Desktop Entry]" > $DESKTOP_FILE
+echo "Version=$VERSION" >> $DESKTOP_FILE
+echo "Name=$APP_NAME" >> $DESKTOP_FILE
+echo "Comment=JankTerminal" >> $DESKTOP_FILE
+echo "Exec=$EXEC_PATH" >> $DESKTOP_FILE
+echo "Icon=$ICON_PATH" >> $DESKTOP_FILE
+echo "Terminal=false" >> $DESKTOP_FILE
+echo "Type=Application" >> $DESKTOP_FILE
+echo "Categories=Utility;Application;" >> $DESKTOP_FILE
+
+chmod +x $DESKTOP_FILE
+
+echo "Application created successfully!"

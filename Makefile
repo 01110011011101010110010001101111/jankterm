@@ -11,8 +11,9 @@ $(TARGET): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(TARGET) $(LDFLAGS)
 
 # Ubuntu specific
-install-vte:
+install:
 	sudo apt-get install -y libvte-2.91-dev
+	sudo ./create_term
 
 run: $(TARGET)
 	./$(TARGET)
