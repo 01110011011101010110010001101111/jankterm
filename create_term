@@ -2,7 +2,7 @@
 
 APP_NAME="JankTerm"
 EXEC_PATH="$(pwd)/term"
-ICON_PATH="$(pwd)/icon2.png"
+ICON_PATH="$(pwd)/jank_term.png"
 DESKTOP_FILE="/usr/share/applications/term.desktop"
 VERSION=1.0
 
