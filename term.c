@@ -42,17 +42,16 @@ gboolean on_key_press(GtkWidget *widget, GdkEventKey *event, gpointer data) {
     return FALSE;
 }
 
-// Callback function for right-click context menu
 gboolean on_context_menu(GtkWidget *widget, GdkEventButton *event, gpointer data) {
     if (event->button == 3) { // Right mouse button
         GtkWidget *menu = gtk_menu_new();
-        
+
         GtkWidget *copy_item = gtk_menu_item_new_with_label("Copy");
-        g_signal_connect(copy_item, "activate", G_CALLBACK(vte_terminal_copy_clipboard_format), widget);
+        g_signal_connect(copy_item, "activate", G_CALLBACK(vte_terminal_copy_clipboard_format), VTE_TERMINAL(widget));
         gtk_menu_shell_append(GTK_MENU_SHELL(menu), copy_item);
 
         GtkWidget *paste_item = gtk_menu_item_new_with_label("Paste");
-        g_signal_connect(paste_item, "activate", G_CALLBACK(vte_terminal_paste_clipboard), widget);
+        g_signal_connect(paste_item, "activate", G_CALLBACK(vte_terminal_paste_clipboard), VTE_TERMINAL(widget));
         gtk_menu_shell_append(GTK_MENU_SHELL(menu), paste_item);
 
         gtk_widget_show_all(menu);
