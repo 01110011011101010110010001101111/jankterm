@@ -21,7 +21,7 @@ gboolean on_key_press(GtkWidget *widget, GdkEventKey *event, gpointer data) {
     if ((event->state & (GDK_CONTROL_MASK | GDK_SHIFT_MASK)) == (GDK_CONTROL_MASK | GDK_SHIFT_MASK)) {
         switch (event->keyval) {
             case GDK_KEY_c:
-                vte_terminal_copy_clipboard(terminal);
+                vte_terminal_copy_clipboard_format(terminal, VTE_FORMAT_TEXT);
                 return TRUE;
             case GDK_KEY_v:
                 vte_terminal_paste_clipboard(terminal);
@@ -48,7 +48,7 @@ gboolean on_context_menu(GtkWidget *widget, GdkEventButton *event, gpointer data
         GtkWidget *menu = gtk_menu_new();
         
         GtkWidget *copy_item = gtk_menu_item_new_with_label("Copy");
-        g_signal_connect(copy_item, "activate", G_CALLBACK(vte_terminal_copy_clipboard), widget);
+        g_signal_connect(copy_item, "activate", G_CALLBACK(vte_terminal_copy_clipboard_format), widget);
         gtk_menu_shell_append(GTK_MENU_SHELL(menu), copy_item);
 
         GtkWidget *paste_item = gtk_menu_item_new_with_label("Paste");
