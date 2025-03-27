@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -O2 -Wall $(shell pkg-config --cflags vte-2.91)
+CFLAGS = -O3 -Wall $(shell pkg-config --cflags vte-2.91)
 LDFLAGS = $(shell pkg-config --libs vte-2.91)
 
 SRC = term.c
