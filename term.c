@@ -17,18 +17,20 @@ void adjust_font_size(VteTerminal *terminal, int adjustment) {
 gboolean on_key_press(GtkWidget *widget, GdkEventKey *event, gpointer data) {
     VteTerminal *terminal = VTE_TERMINAL(widget);
 
+    // TODO: FIGURE OUT CTRL+SHIFT BUG
     // Ctrl Shift 
-    if ((event->state & (GDK_CONTROL_MASK | GDK_SHIFT_MASK)) == (GDK_CONTROL_MASK | GDK_SHIFT_MASK)) {
-        switch (event->keyval) {
-            case GDK_KEY_c:
-                vte_terminal_copy_clipboard_format(terminal, VTE_FORMAT_TEXT);
-                return TRUE;
-            case GDK_KEY_v:
-                vte_terminal_paste_clipboard(terminal);
-                return TRUE;
-        }
+    // if ((event->state & (GDK_CONTROL_MASK | GDK_SHIFT_MASK)) == (GDK_CONTROL_MASK | GDK_SHIFT_MASK)) {
+    //     switch (event->keyval) {
+    //         case GDK_KEY_c:
+    //             vte_terminal_copy_clipboard_format(terminal, VTE_FORMAT_TEXT);
+    //             return TRUE;
+    //         case GDK_KEY_v:
+    //             vte_terminal_paste_clipboard(terminal);
+    //             return TRUE;
+    //     }
+    // }
     // Ctrl
-    } else if (event->state & GDK_CONTROL_MASK) {
+    if (event->state & GDK_CONTROL_MASK) {
         switch (event->keyval) {
             case GDK_KEY_plus:
                 adjust_font_size(terminal, 2);
