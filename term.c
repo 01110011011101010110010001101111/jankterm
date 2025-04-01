@@ -33,7 +33,7 @@ gboolean on_key_press(GtkWidget *widget, GdkEventKey *event, gpointer data) {
             case GDK_KEY_p:
                 vte_terminal_paste_clipboard(terminal);
                 return TRUE;
-            case GDK_KEY_n:
+            case GDK_KEY_N:
                 main();
                 return TRUE;
         }
