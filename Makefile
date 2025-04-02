@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -O3 -Wall $(shell pkg-config --cflags vte-2.91)
 LDFLAGS = $(shell pkg-config --libs vte-2.91)
 
-SRC = term.c
+SRC = src/term.c
 TARGET = term
 
 all: $(TARGET)
@@ -14,7 +14,7 @@ $(TARGET): $(SRC)
 install:
 	sudo apt-get install libcairo2-dev libgdk-pixbuf2.0-dev
 	sudo apt-get install -y libvte-2.91-dev
-	sudo ./create_term
+	sudo ./src/create_term
 
 run: $(TARGET)
 	./$(TARGET)
