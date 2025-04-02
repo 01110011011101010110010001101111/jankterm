@@ -12,6 +12,7 @@ $(TARGET): $(SRC)
 
 # Ubuntu specific
 install:
+	sudo apt-get install libcairo2-dev libgdk-pixbuf2.0-dev
 	sudo apt-get install -y libvte-2.91-dev
 	sudo ./create_term
 
