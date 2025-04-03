@@ -19,7 +19,7 @@ echo "Exec=$EXEC_PATH" >> $DESKTOP_FILE
 echo "Icon=$ICON_PATH" >> $DESKTOP_FILE
 echo "Terminal=false" >> $DESKTOP_FILE
 echo "Type=Application" >> $DESKTOP_FILE
-echo "Categories=Utility;Application;" >> $DESKTOP_FILE
+echo "Categories=System;TerminalEmulator;Utility;Application;" >> $DESKTOP_FILE
 
 chmod +x $DESKTOP_FILE
 
