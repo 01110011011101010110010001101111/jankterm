@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(JankTerm VERSION 1.0)
+project(JankTerm VERSION 0.1)
 
 # Find the VTE package
 find_package(PkgConfig REQUIRED)
