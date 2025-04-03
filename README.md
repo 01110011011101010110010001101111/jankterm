@@ -11,3 +11,12 @@ The commands are roughly Vim-inspired
 | Ctrl + C, Ctrl + y | Copy         |
 | Ctrl + V, Ctrl + p | Paste        |
 | Ctrl + N           | New Terminal |
+
+## To Build Locally
+
+```
+mkdir build && cd build
+cmake ..
+make
+sudo make install
+```
